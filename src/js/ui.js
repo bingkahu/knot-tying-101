@@ -12,7 +12,8 @@ function initUI() {
     updateProgressBar();
     checkAchievements();
     
-    document.addEventListener('DOMContentLoaded', () => {
+// DOMContentLoaded removed - handled in HTML
+
         setupEventListeners();
         renderKnots();
         renderAchievements();
