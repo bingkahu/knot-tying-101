@@ -6,7 +6,7 @@
 - [x] Create ui.js (rendering, events, modals)
 - [x] Create utils.js (helpers, debounce, toast)
 - [x] Create achievements.js
-- [ ] Update index.html script loads
+- [x] Update index.html script loads
 - [ ] Refactor app.js logic to modules (remove, use new)
 
 ## A11y & UX (Priority 2)
