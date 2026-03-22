@@ -1,4 +1,4 @@
-# Knot-tying-101 Repo Improvements TODO
+en wh# Knot-tying-101 Repo Improvements TODO
 
 ## Code Structure (Priority 1)
 - [x] Backup app.js → app.js.backup
@@ -6,7 +6,12 @@
 - [x] Create ui.js (rendering, events, modals)
 - [x] Create utils.js (helpers, debounce, toast)
 - [x] Create achievements.js
+- [x] Create achievements.js
+- [x] Refactor app.js logic to modules (remove, use new)
 - [x] Update index.html script loads
+## Code Structure COMPLETE ✅
+
+## A11y & UX (Priority 2)
 - [ ] Refactor app.js logic to modules (remove, use new)
 
 ## A11y & UX (Priority 2)
