@@ -15,7 +15,7 @@ Interactive knot tying tutorial with **140+ knots**, step-by-step guides, achiev
 - 🧠 **Quiz mode** (coming soon)
 
 ## Live Demo
-- [GitHub Pages](https://bingkahu.github.io/knot-tying-101)
+- [Cloudflare Pages](https://knot-tying-101.pages.dev)
 - Local: `npx live-server .`
 
 ## Structure
