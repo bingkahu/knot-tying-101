@@ -1,7 +1,7 @@
 # Phase 2: Cool UI Improvements
 - [x] Update styles for glassmorphism, gradients, neon badges, card flips
 - [x] Fix broken JS (ui.js created, achievements fixed, knots displaying again)
-- [ ] Add confetti on achievement unlock
+- [x] Add confetti on achievement unlock (confetti.js + triggered in achievements.js)
 - [ ] Gradient progress bar SVG
 - [ ] Canvas particle background
 - [ ] Git commit/push each change

@@ -29,6 +29,10 @@ function checkAchievements() {
         if (!state.achievements.includes(ach.id) && ach.condition(state.learned)) {
             state.achievements.push(ach.id);
             showToast(`🏆 Unlocked: ${ach.title}!`);
+            // Trigger confetti at achievements modal position
+            const modal = document.getElementById('achievementsModal');
+            const rect = modal ? modal.getBoundingClientRect() : { left: window.innerWidth / 2, top: window.innerHeight / 2 };
+            confetti.explode(rect.left + rect.width / 2, rect.top + rect.height / 2, 150);
             newUnlocks++;
         }
     });
