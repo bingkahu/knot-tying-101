@@ -1,5 +1,5 @@
 // data.js - All knots data (40+, to be expanded to 140+)
-export const knots = [
+const knots = [
     {
         id: "square-knot",
         name: "Square Knot (Reef Knot)",
@@ -54,4 +54,6 @@ export const knots = [
     }
     // ... remaining knots (truncated for brevity - full 140+ in final)
 ];
+
+export { knots }; 
 

@@ -2,13 +2,14 @@
 
 import { state } from './state.js';
 import { showToast } from './utils.js';
-import { knotsData } from './data.js';
+import { knots } from './src/js/data.js';
 
 function countTags(l, tag) {
     return l.filter(id => {
-        const knot = knotsData.find(k => k.id === id);
+        const knot = knots.find(k => k.id === id);
         return knot && knot.tags.includes(tag);
     }).length;
+
 }
 
 const achievementsDef = [
@@ -16,7 +17,7 @@ const achievementsDef = [
     { id: 'a2', title: 'Beginner', desc: 'Learn 5 knots', condition: (l) => l.length >= 5, icon: '🥉' },
     { id: 'a3', title: 'Intermediate', desc: 'Learn 15 knots', condition: (l) => l.length >= 15, icon: '🥈' },
     { id: 'a4', title: 'Advanced', desc: 'Learn 30 knots', condition: (l) => l.length >= 30, icon: '🥇' },
-    { id: 'a5', title: 'Master', desc: 'Learn ALL knots!', condition: (l) => l.length >= knotsData.length, icon: '👑' },
+{ id: 'a5', title: 'Master', desc: 'Learn ALL knots!', condition: (l) => l.length >= knots.length, icon: '👑' },
     { id: 'a6', title: 'Sailing Pro', desc: 'Learn 5 Sailing knots', condition: (l) => countTags(l, 'sailing') >= 5, icon: '⛵' },
     { id: 'a7', title: 'Climber', desc: 'Learn 5 Climbing knots', condition: (l) => countTags(l, 'climbing') >= 5, icon: '🧗' },
     { id: 'a8', title: 'Hitch Wizard', desc: 'Learn 5 Hitches', condition: (l) => countTags(l, 'hitch') >= 5, icon: '🧙' },
