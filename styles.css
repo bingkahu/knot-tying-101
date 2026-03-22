@@ -1,16 +1,19 @@
 :root {
-    --bg-color: #f8fafc;
-    --text-color: #0f172a;
-    --card-bg: #ffffff;
-    --border-color: #e2e8f0;
-    --primary: #3b82f6;
-    --primary-hover: #2563eb;
-    --beginner: #10b981;
-    --intermediate: #f59e0b;
-    --advanced: #ef4444;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --modal-bg: rgba(0, 0, 0, 0.5);
+    --bg-color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --text-color: #1a1a2e;
+    --card-bg: rgba(255, 255, 255, 0.25);
+    --border-color: rgba(255, 255, 255, 0.18);
+    --primary: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+    --primary-hover: linear-gradient(45deg, #5a67d8 0%, #6b46c1 100%);
+    --beginner: linear-gradient(45deg, #48bb78 0%, #38a169 100%);
+    --intermediate: linear-gradient(45deg, #ed8936 0%, #dd6b20 100%);
+    --advanced: linear-gradient(45deg, #f56565 0%, #e53e3e 100%);
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --hover-shadow: 0 20px 40px 0 rgba(31, 38, 135, 0.5);
+    --modal-bg: rgba(26, 26, 46, 0.8);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --neon-glow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 [data-theme="dark"] {
