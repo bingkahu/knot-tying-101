@@ -11,13 +11,9 @@ function initUI() {
     updateTheme(state.theme);
     updateProgressBar();
     checkAchievements();
-    
-// DOMContentLoaded removed - handled in HTML
-
-        setupEventListeners();
-        renderKnots();
-        renderAchievements();
-    });
+    setupEventListeners();
+    renderKnots();
+    renderAchievements();
 }
 
 function setupEventListeners() {
