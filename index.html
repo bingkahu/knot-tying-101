@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnotMaster Pro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>KnotMaster Pro 🪢</h1>
+            <div class="header-controls">
+                <button id="themeToggle" class="icon-btn" title="Toggle Theme">🌙</button>
+                <button id="achievementsBtn" class="icon-btn" title="Achievements">🏆</button>
+            </div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-text">Progress: <span id="progressPercent">0</span>% (<span id="knotsLearnedCount">0</span>/40)</div>
+            <div class="progress-bar-bg">
+                <div id="progressBar" class="progress-bar-fill"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="controls">
+            <input type="text" id="searchInput" placeholder="Search knots...">
+            <select id="difficultyFilter">
+                <option value="all">All Difficulties</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+            </select>
+            <select id="tagFilter">
+                <option value="all">All Categories</option>
+                <option value="loop">Loop</option>
+                <option value="hitch">Hitch</option>
+                <option value="bend">Bend</option>
+                <option value="stopper">Stopper</option>
+                <option value="climbing">Climbing</option>
+                <option value="sailing">Sailing</option>
+                <option value="rescue">Rescue</option>
+                <option value="decorative">Decorative</option>
+            </select>
+            <select id="sortOption">
+                <option value="alpha">A-Z</option>
+                <option value="difficulty">Difficulty</option>
+                <option value="status">Learned First</option>
+            </select>
+        </section>
+
+        <section id="knotGrid" class="knot-grid">
+            </section>
+    </main>
+
+    <div id="knotModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal">&times;</button>
+            <div class="modal-header">
+                <h2 id="modalTitle">Knot Name</h2>
+                <button id="modalFavBtn" class="fav-btn">🤍</button>
+            </div>
+            <div class="modal-badges" id="modalBadges"></div>
+            <p id="modalDesc" class="modal-desc"></p>
+            
+            <div class="modal-sections">
+                <div class="section">
+                    <h3>Step-by-Step</h3>
+                    <ol id="modalSteps" class="step-list"></ol>
+                </div>
+                <div class="section info-box use-box">
+                    <strong>Real-world Uses:</strong> <span id="modalUses"></span>
+                </div>
+                <div class="section info-box mistake-box">
+                    <strong>Common Mistakes:</strong> <span id="modalMistakes"></span>
+                </div>
+                <div class="section info-box safety-box">
+                    <strong>Safety Notes:</strong> <span id="modalSafety"></span>
+                </div>
+                <div class="section info-box var-box">
+                    <strong>Variations:</strong> <span id="modalVars"></span>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="markLearnedBtn" class="primary-btn">Mark as Learned</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="achievementsModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-btn" id="closeAchieveModal">&times;</button>
+            <h2>Your Achievements 🏆</h2>
+            <div id="achievementsList" class="achievements-grid">
+                </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
