@@ -6,4 +6,5 @@
 - [ ] Canvas particle background
 - [ ] Git commit/push each change
 - [ ] Quiz mode
+- [ ] Add 100 new knots to data.js (expand to 140+ total)
 - [x] Push to GitHub bingkahu/knot-tying-101
