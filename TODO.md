@@ -1,28 +1,8 @@
-en wh# Knot-tying-101 Repo Improvements TODO
-
-## Code Structure (Priority 1)
-- [x] Backup app.js → app.js.backup
-- [x] Create state.js (state mgmt, localStorage)
-- [x] Create ui.js (rendering, events, modals)
-- [x] Create utils.js (helpers, debounce, toast)
-- [x] Create achievements.js
-- [x] Create achievements.js
-- [x] Refactor app.js logic to modules (remove, use new)
-- [x] Update index.html script loads
-## Code Structure COMPLETE ✅
-
-## A11y & UX (Priority 2)
-- [ ] Refactor app.js logic to modules (remove, use new)
-
-## A11y & UX (Priority 2)
-- [ ] Add ARIA labels/roles to cards, modals, buttons
-- [ ] Keyboard navigation for grid/modals
-- [ ] CSS animations for cards/modal
-- [ ] Debounce search input
-- [ ] Escape HTML in search
-
-## New Features (Priority 3)
-- [ ] Add Quiz mode modal/button
-- [ ] Add Stats page/modal (mastery %, time, etc.)
-
-## PWA & Polish (Priority 4
+# Phase 2: Cool UI Improvements
+- [x] Update styles for glassmorphism, gradients, neon badges, card flips
+- [ ] Add confetti on achievement unlock
+- [ ] Gradient progress bar SVG
+- [ ] Canvas particle background
+- [ ] Git commit/push each change
+- [ ] Quiz mode
+- [x] Push to GitHub bingkahu/knot-tying-101

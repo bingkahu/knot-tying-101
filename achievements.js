@@ -4,15 +4,22 @@ import { state } from './state.js';
 import { showToast } from './utils.js';
 import { knotsData } from './data.js';
 
+function countTags(l, tag) {
+    return l.filter(id => {
+        const knot = knotsData.find(k => k.id === id);
+        return knot && knot.tags.includes(tag);
+    }).length;
+}
+
 const achievementsDef = [
     { id: 'a1', title: 'Novice Tyger', desc: 'Learn 1 knot', condition: (l) => l.length >= 1, icon: '🪢' },
     { id: 'a2', title: 'Beginner', desc: 'Learn 5 knots', condition: (l) => l.length >= 5, icon: '🥉' },
     { id: 'a3', title: 'Intermediate', desc: 'Learn 15 knots', condition: (l) => l.length >= 15, icon: '🥈' },
     { id: 'a4', title: 'Advanced', desc: 'Learn 30 knots', condition: (l) => l.length >= 30, icon: '🥇' },
     { id: 'a5', title: 'Master', desc: 'Learn ALL knots!', condition: (l) => l.length >= knotsData.length, icon: '👑' },
-    { id: 'a6', title: 'Sailing Pro', desc: 'Learn 5 Sailing knots', condition: (l) => countTags('sailing') >= 5, icon: '⛵' },
-    { id: 'a7', title: 'Climber', desc: 'Learn 5 Climbing knots', condition: (l) => countTags('climbing') >= 5, icon: '🧗' },
-    { id: 'a8', title: 'Hitch Wizard', desc: 'Learn 5 Hitches', condition: (l) => countTags('hitch') >= 5, icon: '🧙' },
+    { id: 'a6', title: 'Sailing Pro', desc: 'Learn 5 Sailing knots', condition: (l) => countTags(l, 'sailing') >= 5, icon: '⛵' },
+    { id: 'a7', title: 'Climber', desc: 'Learn 5 Climbing knots', condition: (l) => countTags(l, 'climbing') >= 5, icon: '🧗' },
+    { id: 'a8', title: 'Hitch Wizard', desc: 'Learn 5 Hitches', condition: (l) => countTags(l, 'hitch') >= 5, icon: '🧙' },
     { id: 'a9', title: 'Quiz Ace', desc: '100% Quiz score', condition: () => state.quiz.highScore === 10, icon: '⭐' }
 ];
 
@@ -21,7 +28,7 @@ function checkAchievements() {
     achievementsDef.forEach(ach => {
         if (!state.achievements.includes(ach.id) && ach.condition(state.learned)) {
             state.achievements.push(ach.id);
-            showToast(`🏆 Unlocked: ${ach.title}!`, 'success');
+            showToast(`🏆 Unlocked: ${ach.title}!`);
             newUnlocks++;
         }
     });
