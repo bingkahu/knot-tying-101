@@ -35,18 +35,23 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    background: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    backdrop-filter: blur(10px);
+    min-height: 100vh;
 }
 
 header {
-    background: var(--card-bg);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
     padding: 1.5rem 2rem;
     box-shadow: var(--shadow);
     position: sticky;
     top: 0;
     z-index: 10;
+    border-radius: 0 0 20px 20px;
 }
 
 .header-content {
