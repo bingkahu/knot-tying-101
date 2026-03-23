@@ -21,10 +21,10 @@ class App {
 
   bindEvents() {
     // Intro screen
-    document.getElementById('begin-btn').onclick = () => {
-      document.getElementById('intro-screen').style.display = 'none';
-      document.getElementById('app').classList.add('show');
-    };
+    // document.getElementById('begin-btn').onclick = () => {
+      // document.getElementById('intro-screen').style.display = 'none';
+      // document.getElementById('app').classList.add('show');
+    // };
 
     // Search
     document.getElementById('search-input').oninput = (e) => {
