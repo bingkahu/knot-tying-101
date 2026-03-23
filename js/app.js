@@ -16,7 +16,6 @@ class App {
     this.bindEvents();
     this.renderKnotGrid();
     this.updateHUD();
-    game.updateHUD();
   }
 
   bindEvents() {
