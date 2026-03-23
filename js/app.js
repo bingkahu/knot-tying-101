@@ -41,6 +41,11 @@ class App {
       btn.onclick = () => this.setDifficultyFilter(btn.dataset.diff);
     });
 
+    // Tags
+    document.querySelectorAll('.tag-filter').forEach(btn => {
+      btn.onclick = () => this.toggleTag(btn.dataset.tag);
+    });
+
     // Sort
     document.getElementById('sort-select').onchange = (e) => {
       this.sortBy = e.target.value;
@@ -49,14 +54,30 @@ class App {
 
     // Theme toggle
     document.getElementById('theme-toggle').onclick = () => {
-      document.body.dataset.theme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
+      const isLight = document.documentElement.dataset.theme === 'light';
+      document.documentElement.dataset.theme = isLight ? 'dark' : 'light';
+      this.themeToggleButton.textContent = isLight ? '☀️ Light' : '🌑 Dark';
     };
-  }
+    this.themeToggleButton = document.getElementById('theme-toggle');
+    this.themeToggleButton.textContent = document.documentElement.dataset.theme === 'light' ? '🌑 Dark' : '☀️ Light';
+  };
 
   setDifficultyFilter(diff) {
     document.querySelectorAll('.diff-filter').forEach(b => b.classList.remove('active'));
     document.querySelector(`[data-diff="${diff}"]`).classList.add('active');
     this.currentFilters.difficulty = diff;
+    this.renderKnotGrid();
+  }
+
+  toggleTag(tag) {
+    const idx = this.currentFilters.tags.indexOf(tag);
+    if (idx > -1) {
+      this.currentFilters.tags.splice(idx, 1);
+      document.querySelector(`[data-tag="${tag}"]`).classList.remove('active');
+    } else {
+      this.currentFilters.tags.push(tag);
+      document.querySelector(`[data-tag="${tag}"]`).classList.add('active');
+    }
     this.renderKnotGrid();
   }
 
@@ -68,6 +89,9 @@ class App {
       
       // Difficulty
       if (this.currentFilters.difficulty !== 'All' && knot.difficulty !== this.currentFilters.difficulty) return false;
+      
+      // Tags
+      if (this.currentFilters.tags.length && !knot.tags.some(t => this.currentFilters.tags.includes(t))) return false;
       
       // Favorites (learned)
       if (this.showFavorites && !game.learned.has(knot.id)) return false;

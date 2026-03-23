@@ -1,6 +1,8 @@
 // WhatKnot Gamification System v1.0
 // XP, Ranks, Achievements, Progress Tracking
 
+import { knots } from './knots.js';
+
 const RANKS = [
   { name: 'Recruit', icon: '◈', xpRequired: 0 },
   { name: 'Scout', icon: '◆', xpRequired: 100 },
@@ -59,11 +61,20 @@ class Gamification {
 
   checkAchievements() {
     ACHIEVEMENTS.forEach(ach => {
-      if (!this.achievements.has(ach.id) && this.checkAchievement(ach.id)) {
+      if (!this.achievements.has(ach.id) && false) { // stubbed checkAchievement
         this.achievements.add(ach.id);
         // Show achievement popup
       }
     });
+  }
+
+  checkAchievement(id) {
+    switch(id) {
+      case 'first-knot': return this.learned.size > 0;
+      case '10-knots': return this.learned.size >= 10;
+      case 'beginner': return knots.filter(k => k.difficulty === 'Beginner').length === knots.filter(k => k.difficulty === 'Beginner' && this.learned.has(k.id)).length;
+      default: return false;
+    }
   }
 
   getCurrentRank() {

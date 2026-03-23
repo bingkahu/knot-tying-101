@@ -34,6 +34,16 @@
   --border-radius: 8px;
 }
 
+body[data-theme="light"] {
+  --bg-dark: #f8fafc;
+  --bg-darker: #f1f5f9;
+  --bg-panel: #e2e8f0;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+}
+
 /* Light theme override */
 [data-theme="light"] {
   --bg-dark: #f8fafc;
