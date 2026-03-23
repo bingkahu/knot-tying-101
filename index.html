@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatKnot — Tactical Knot Training System</title>
+  <meta name="description" content="Master the ropes. Survive anything. A tactical, gamified knot-tying training system with 55+ knots.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>⬡</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     INTRO SCREEN
+═══════════════════════════════════════════════════════════════ -->
+<div id="intro-screen">
+  <div class="intro-bg"></div>
+  <div class="intro-grid"></div>
+  <div class="intro-scanlines"></div>
+
+  <div class="intro-corner tl">WHATKNOT // v1.0<br>FIELD TRAINING MODULE</div>
+  <div class="intro-corner tr">CLASSIFICATION: OPEN<br>STATUS: READY</div>
+  <div class="intro-corner bl">55 KNOTS DOCUMENTED<br>6 RANK LEVELS</div>
+  <div class="intro-corner br">SURVIVAL SYSTEMS<br>BUSHCRAFT · TACTICAL · RESCUE</div>
+
+  <div class="intro-content">
+    <div class="intro-eyebrow">Tactical Knot Training System</div>
+    <div class="intro-logo">What<span>Knot</span></div>
+    <div class="intro-tagline">Master the ropes. Survive anything.</div>
+    <div class="intro-divider"></div>
+    <div class="intro-classification">55 KNOTS · XP PROGRESSION · FIELD-TESTED TECHNIQUES</div>
+    <button class="begin-btn" id="begin-btn">
+      <span>⬡ Begin Training</span>
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MAIN APP
+═══════════════════════════════════════════════════════════════ -->
+<div id="app">
+
+  <!-- ─── SIDEBAR ─────────────────────────────────────────────── -->
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">What<span>Knot</span></div>
+      <div class="sidebar-sub">Tactical Training System</div>
+    </div>
+
+    <!-- HUD: Rank & XP -->
+    <div class="hud-section">
+      <div class="hud-rank-display">
+        <div class="hud-rank-icon" id="hud-rank-icon">◈</div>
+        <div class="hud-rank-info">
+          <div class="hud-rank-name" id="hud-rank">Recruit
+
+</div>
+          <div class="hud-xp" id="hud-xp">0 XP</div>
+        </div>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="rank-progress-bar" style="width:0%"></div>
+      </div>
+      <div class="hud-next" id="hud-next">100 XP to Scout</div>
+
+      <div class="hud-learned-row">
+        <span class="hud-learned-label">Knots Learned</span>
+        <span class="hud-learned-count" id="hud-learned">0 / 55</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="learned-progress-bar" style="width:0%"></div>
+      </div>
+      <div class="hud-next" id="hud-pct" style="text-align:right">0% Complete</div>
+    </div>
+
+    <!-- Achievements -->
+    <div class="ach-section">
+      <div class="section-header">⬡ Achievements</div>
+      <div id="achievement-grid"></div>
+    </div>
+
+    <!-- Difficulty Stats -->
+    <div class="stats-section">
+      <div class="section-header">◈ Progress by Difficulty</div>
+      <div class="stat-row">
+        <span class="stat-label" style="color:var(--diff-beginner)">Beginner</span>
+        <span class="stat-value" id="stat-beginner">0 / 0</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label" style="color:var(--diff-intermediate)">Intermediate</span>
+        <span class="stat-value" id="stat-intermediate">0 / 0</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label" style="color:var(--diff-advanced)">Advanced</span>
+        <span class="stat-value" id="stat-advanced">0 / 0</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="sidebar-footer">
+      <button id="theme-toggle">◑ Light</button>
+    </div>
+  </aside>
+
+  <!-- ─── MAIN CONTENT ────────────────────────────────────────── -->
+  <main id="main">
+
+    <!-- Topbar -->
+    <div id="topbar">
+      <button id="sidebar-toggle">☰ Menu</button>
+
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search knots... (Ctrl+K)"
+          autocomplete="off"
+          spellcheck="false"
+        >
+      </div>
+
+      <div class="topbar-controls">
+        <select id="sort-select">
+          <option value="name">Sort: A–Z</option>
+          <option value="difficulty">Sort: Difficulty</option>
+          <option value="xp">Sort: XP Value</option>
+          <option value="learned">Sort: Learned First</option>
+        </select>
+
+        <button id="show-favorites">♦ Favorites</button>
+      </div>
+    </div>
+
+    <!-- Filter bar -->
+    <div id="filter-bar">
+      <span class="filter-label">Difficulty:</span>
+      <button class="diff-filter active" data-diff="All">All</button>
+      <button class="diff-filter" data-diff="Beginner">Beginner</button>
+      <button class="diff-filter" data-diff="Intermediate">Intermediate</button>
+      <button class="diff-filter" data-diff="Advanced">Advanced</button>
+
+      <div class="filter-sep"></div>
+
+      <span class="filter-label">Tags:</span>
+      <button class="tag-filter" data-tag="loop">loop</button>
+      <button class="tag-filter" data-tag="hitch">hitch</button>
+      <button class="tag-filter" data-tag="bend">bend</button>
+      <button class="tag-filter" data-tag="stopper">stopper</button>
+      <button class="tag-filter" data-tag="climbing">climbing</button>
+      <button class="tag-filter" data-tag="sailing">sailing</button>
+      <button class="tag-filter" data-tag="rescue">rescue</button>
+      <button class="tag-filter" data-tag="survival">survival</button>
+      <button class="tag-filter" data-tag="bushcraft">bushcraft</button>
+      <button class="tag-filter" data-tag="tactical">tactical</button>
+      <button class="tag-filter" data-tag="fishing">fishing</button>
+    </div>
+
+    <!-- Count bar -->
+    <div id="count-bar">
+      <span id="knot-count">55 knots</span>
+      <span style="font-size:0.6rem;color:var(--text-muted);letter-spacing:0.15em">CTRL+K TO SEARCH</span>
+    </div>
+
+    <!-- Knot Grid -->
+    <div id="knot-grid"></div>
+
+  </main>
+
+</div>
+
+<!-- ─── DETAIL PANEL (SLIDE-OVER) ──────────────────────────────── -->
+<div id="detail-panel"></div>
+
+<!-- ─── SCRIPTS ─────────────────────────────────────────────────── -->
+<script src="js/knots.js"></script>
+<script src="js/gamification.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
