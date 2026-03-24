@@ -1,7 +1,7 @@
 // WhatKnot Main App Logic v1.0
 // UI management, search/filter/sort, detail panel
 
-import { knots, totalKnots } from './knots.js';
+import { knots, totalKnots } from './knots-complete.js';
 import { game, RANKS, ACHIEVEMENTS } from './gamification.js';
 
 class App {
