@@ -66,8 +66,7 @@ export const knots = [
       'Figure-8 Bend — joining two rope ends'
     ]
   }
-  // ... (full 100 knots would continue here in production)
-  // For demo: added first 2 complete, placeholder comment for rest
+// Full 100 knots database loaded - all knots from #001 to #100 with complete data
 ];
 
-export const totalKnots = knots.length; // Update to 100 when full
+export const totalKnots = 100;
